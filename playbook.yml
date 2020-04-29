@@ -3,7 +3,7 @@
     - name: copy artifact
       copy:
         src:'multygo_master'
-        dest: /home/vagrant/module10
+        dest: /home/vagrant/multygo_master
         mode: 0777
 
     - name: create simple service template
