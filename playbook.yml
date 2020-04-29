@@ -2,7 +2,7 @@
   tasks:
     - name: copy artifact
       copy:
-        src: /multygo_master
+        src: 'multygo_master'
         dest: /home/vagrant/multygo_master
         mode: 0777
 
