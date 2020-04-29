@@ -10,9 +10,10 @@ pipeline {
       steps {
         ansiColor('xterm') {
           ansiblePlaybook colorized: true,
-            credentialsId: 'vagrant',
+            credentialsId: '4e9e04f8-0f41-4529-97c2-02f39c3bcb8a',
             disableHostKeyChecking: true,
-            inventory: 'hosts.ini',
+            installation: 'asinble',
+            inventory: 'host.ini',
             playbook: 'playbook.yml'
         }
       }
