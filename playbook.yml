@@ -1,0 +1,6 @@
+hosts: all
+tasks:
+  - name: copy assets
+    copy:
+      src: sourcefile
+      dest: /home/vagrant/destfile
