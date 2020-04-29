@@ -1,0 +1,11 @@
+[Unit]
+Description=Simple service with API written in Go
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/vagrant/simple
+PIDFile=/var/run/simple
+
+[Install]
+WantedBy=default.target
