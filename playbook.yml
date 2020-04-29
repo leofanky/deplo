@@ -3,19 +3,19 @@
     - name: copy artifact
       copy:
         src:'multygo_master'
-        dest: /home/vagrant/multygo_master
+        dest: /home/vagrant/simple
         mode: 0777
 
-    - name: create multygo_master service template
+    - name: create simple service template
       become: true
       template:
-        src: multygo_master.service.j2
-        dest: /etc/systemd/system/multygo_master.service
+        src: simple.service.j2
+        dest: /etc/systemd/system/simple.service
 
     - name: start systemd service
       become: true
       systemd:
-        name: multygo_master
+        name: simple
         daemon_reload: yes
         enabled: true
         state: restarted
