@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Copy artifacts') {
       steps {
-        copyArtifacts filter: 'simple', fingerprintArtifacts: true, projectName: 'go pipeline', selector: lastSuccessful()
+        copyArtifacts filter: 'multygo_master', fingerprintArtifacts: true, projectName: 'multygo/master', selector: lastSuccessful()            }
       }
     }
     stage('Run ansible') {
