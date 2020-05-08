@@ -34,7 +34,7 @@ pipeline {
 				}
 			}
             steps {
-                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run https://www.getpostman.com/collections/434a10daa020cc392009 -e prodoction.postman_environment.json'
+                sh 'docker run -v $HOME/workspace/Deploy/environments/prodoction:/etc/newman -t postman/newman run https://www.getpostman.com/collections/434a10daa020cc392009 -e prodoction.postman_environment.json'
                 }
         }
 
