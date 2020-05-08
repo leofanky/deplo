@@ -27,21 +27,18 @@ pipeline {
                     playbook: 'playbook.yml'
             }
     }
-        stage('Run newman tests') {
-        agent { 
-            docker { 
-            image "postman/newman"
-            args '--entrypoint=' 
-            }
-        }
+        stage('tests prod') {
+        when {
+				expression {
+					params.BRANCH == 'master'
+				}
+			}
             steps {
                 sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run https://www.getpostman.com/collections/434a10daa020cc392009 -e postman_environment.json -e postman_environment.json'
-                    }
                 }
+        }
 
-
-
-        stage('Deliver to staging') {
+        stage('staging') {
             when {
                 expression {
                     params.BRANCH == 'staging'
@@ -58,7 +55,7 @@ pipeline {
             }
     }
 
-		stage('Test E2E staging') {
+		stage('Test staging') {
 			when {
 				expression {
 					params.BRANCH == 'staging'
