@@ -23,8 +23,8 @@ pipeline {
                     credentialsId: '4e9e04f8-0f41-4529-97c2-02f39c3bcb8a',
                     disableHostKeyChecking: true,
                     installation: 'asinble',
-                    inventory: '/var/lib/jenkins/workspace/example1-deployment/host.ini',
-                    playbook: '/var/lib/jenkins/workspace/example1-deployment/playbook.yml'
+                    inventory: 'environments/production/host.ini',
+                    playbook: 'playbook.yml'
             }
     }
         stage('Run newman tests') {
@@ -35,7 +35,7 @@ pipeline {
             }
         }
             steps {
-                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run https://www.getpostman.com/collections/434a10daa020cc392009 -e postman_environment.json'
+                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run https://www.getpostman.com/collections/434a10daa020cc392009 -e postman_environment.json -e postman_environment.json'
                     }
                 }
 
@@ -53,8 +53,8 @@ pipeline {
                     credentialsId: '4e9e04f8-0f41-4529-97c2-02f39c3bcb8a',
                     disableHostKeyChecking: true,
                     installation: 'asinble',
-                    inventory: '/var/lib/jenkins/workspace/example1-deployment/host.ini',
-                    playbook: '/var/lib/jenkins/workspace/example1-deployment/playbook.yml'
+                    inventory: 'environments/staging/host.ini',
+                    playbook: 'playbook.yml'
             }
     }
 
@@ -64,7 +64,7 @@ pipeline {
 					params.BRANCH == 'staging'
 				}
             steps {
-                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run https://www.getpostman.com/collections/434a10daa020cc392009 -e postman_environment.json'
+                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run https://www.getpostman.com/collections/434a10daa020cc392009 -e postman_environment.json -e postman_environment.json'
 				}
 			}
 		}
