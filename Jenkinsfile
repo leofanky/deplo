@@ -26,6 +26,7 @@ pipeline {
       }
       steps {
         sh 'newman run https://www.getpostman.com/collections/434a10daa020cc392009 --reporters=cli,junit'
+      }
     }
   }
 }
