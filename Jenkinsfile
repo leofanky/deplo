@@ -17,6 +17,10 @@ pipeline {
         
       }
     }
-  
+      stage('Run newman tests') {
+      agent { docker { image "postman/newman"
+                       args '--entrypoint=' } }
+      steps {
+        sh 'newman run https://www.getpostman.com/collections/434a10daa020cc392009 --reporters=cli,junit'
   }
 }
