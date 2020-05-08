@@ -34,7 +34,7 @@ pipeline {
 				}
 			}
             steps {
-                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run "https://www.getpostman.com/collections/434a10daa020cc392009" -e $HOME/workspace/Deploy/environments/production/prodoction.postman_environment.json'
+                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run "https://www.getpostman.com/collections/434a10daa020cc392009" -e $HOME/workspace/example1-deployment/environments/production/prodoction.postman_environment.json'
                 }
         }
 
@@ -62,7 +62,7 @@ pipeline {
 				}
 			}
             steps {
-                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run "https://www.getpostman.com/collections/434a10daa020cc392009" -e $HOME/workspace/Deploy/environments/staging/staging.postman_environment.json'
+                sh 'docker run -v $HOME/workspace/Deploy/environments/staging:/etc/newman -t postman/newman run "https://www.getpostman.com/collections/434a10daa020cc392009" -e $HOME/workspace/example1-deployment/environments/staging/staging.postman_environment.json'
 			}
 		}
 	}
