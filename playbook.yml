@@ -3,7 +3,7 @@
     - name: copy artifact
       copy:
         src: /var/lib/jenkins/workspace/pepe/mypipeisdestryedatthispoint
-        dest: /home/vagrant/multygo_master
+        dest: /home/ec2-user/mypipeisdestryedatthispoint
         mode: 0777
 
     - name: create simple service template
