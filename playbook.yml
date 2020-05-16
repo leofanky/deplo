@@ -2,7 +2,7 @@
   tasks:
     - name: copy artifact
       copy:
-        src: /var/lib/jenkins/workspace/example1-deployment/multygo_master
+        src: /var/lib/jenkins/workspace/pepe/mypipeisdestryedatthispoint
         dest: /home/vagrant/multygo_master
         mode: 0777
 
